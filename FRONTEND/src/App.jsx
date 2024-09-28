@@ -24,7 +24,7 @@ const BannerData = {
     title2: "Air Solo Bass",
     title3: "Winter Sale",
     title4: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque reiciendis",
-    bgColor: "#f42c37",
+    bgColor: "#ff2ee6",
 };
 
 const BannerData2 = {
@@ -35,7 +35,7 @@ const BannerData2 = {
     title2: "Smart Solo",
     title3: "Winter Sale",
     title4: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque reiciendis",
-    bgColor: "#2dcc6f",
+    bgColor: "#2dccff",
 };
 
 const App = () => {

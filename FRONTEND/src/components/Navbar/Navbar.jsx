@@ -39,8 +39,18 @@ const DropdownLinks = [
         link: "/#",
     },
     {
-        id: 1,
+        id: 3,
         name: "Top rated",
+        link: "/#",
+    },
+    {
+        id: 4,
+        name: "Sale Products",
+        link: "/#",
+    },
+    {
+        id: 5,
+        name: "New Products",
         link: "/#",
     },
 ];
@@ -82,8 +92,8 @@ const Navbar = ({ handleOrderPopup }) => {
                                     <a
                                         href="#"
                                         className="flex items-center gap-[2px]
-            font-semibold text-gray-500 
-            dark:hover:text-white py-2"
+                                        font-semibold text-gray-500 
+                                      dark:hover:text-white py-2"
                                     >
                                         Quick Links
                                         <span>
@@ -106,12 +116,13 @@ const Navbar = ({ handleOrderPopup }) => {
                                                         <a
                                                             className="text-gray-500
                         dark:hover:text-white
-                        duration-200 inline-block w-full p-2 hover:bg-primary/20 rounded-md
+                        duration-200 inline-block w-full p-2 hover:bg-primary/10 rounded-md
                         font-semibold"
                                                             href={data.link}
                                                         >
                                                             {data.name}
                                                         </a>
+                                                        <hr className="" />
                                                     </li>
                                                 )
                                             )}
