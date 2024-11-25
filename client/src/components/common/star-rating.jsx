@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import { StarIcon } from "lucide-react";
 import { Button } from "../ui/button";
 

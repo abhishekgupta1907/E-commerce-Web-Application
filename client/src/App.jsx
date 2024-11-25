@@ -6,7 +6,6 @@ import AdminLayout from "./components/admin-view/layout";
 import AdminDashboard from "./pages/admin-view/dashboard";
 import AdminProducts from "./pages/admin-view/products";
 import AdminOrders from "./pages/admin-view/orders";
-import AdminFeatures from "./pages/admin-view/features";
 import ShoppingLayout from "./components/shopping-view/layout";
 import NotFound from "./pages/not-found";
 import ShoppingHome from "./pages/shopping-view/home";
@@ -45,7 +44,7 @@ import SearchProducts from "./pages/shopping-view/search";
 // import { checkAuth } from "./store/auth-slice";
 // import { Skeleton } from "./components/ui/skeleton";
 
-function App() {
+const App = () => {
     const { user, isAuthenticated, isLoading } = useSelector(
         (state) => state.auth
     );
@@ -99,7 +98,6 @@ function App() {
                     <Route path="dashboard" element={<AdminDashboard />} />
                     <Route path="products" element={<AdminProducts />} />
                     <Route path="orders" element={<AdminOrders />} />
-                    <Route path="features" element={<AdminFeatures />} />
                 </Route>
                 <Route
                     path="/shop"
@@ -131,7 +129,7 @@ function App() {
             </Routes>
         </div>
     );
-}
+};
 
 export default App;
 

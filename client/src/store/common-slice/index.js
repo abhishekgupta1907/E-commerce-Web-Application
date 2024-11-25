@@ -28,6 +28,18 @@ export const addFeatureImage = createAsyncThunk(
     return response.data;
   }
 );
+export const deleteFeatureImage = createAsyncThunk(
+  "/order/deleteFeatureImage",
+  async (imageId) => {
+    console.log(imageId);
+    if (!imageId) throw new Error("Image ID is required");
+    const response = await axios.delete(
+      `http://localhost:5000/api/common/feature/delete/${imageId}`
+    );
+    return response.data;
+  }
+);
+
 
 const commonSlice = createSlice({
   name: "commonSlice",
@@ -45,6 +57,13 @@ const commonSlice = createSlice({
       .addCase(getFeatureImages.rejected, (state) => {
         state.isLoading = false;
         state.featureImageList = [];
+      })
+      .addCase(deleteFeatureImage.fulfilled, (state, action) => {
+        if (action.payload.success) {
+          state.featureImageList = state.featureImageList.filter(
+            (image) => image.id !== action.payload.id
+          );
+        }
       });
   },
 });

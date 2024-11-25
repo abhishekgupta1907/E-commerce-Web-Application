@@ -14,14 +14,14 @@ const shopSearchRouter = require("./routes/shop/search-routes");
 const shopReviewRouter = require("./routes/shop/review-routes");
 
 const commonFeatureRouter = require("./routes/common/feature-routes");
-
+require('dotenv').config();
 //create a database connection -> u can also
 //create a separate file for this and then import/use that file here
 
-mongoose
-  .connect("mongodb://localhost:27017/shop")
-  .then(() => console.log("MongoDB connected"))
-  .catch((error) => console.log(error));
+// MongoDB Connection
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB connected...'))
+  .catch(err => console.log(err));
 
 const app = express();
 const PORT = process.env.PORT || 5000;

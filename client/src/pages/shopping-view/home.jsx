@@ -102,12 +102,14 @@ function ShoppingHome() {
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentSlide(
-                (prevSlide) => (prevSlide + 1) % featureImageList.length
+                featureImageList.length === 0
+                    ? (prevSlide) => (prevSlide + 1) % slides.length
+                    : (prevSlide) => (prevSlide + 1) % featureImageList.length
             );
-        }, 15000);
+        }, 1000);
 
         return () => clearInterval(timer);
-    }, [featureImageList]);
+    }, [featureImageList, slides]);
 
     useEffect(() => {
         dispatch(
