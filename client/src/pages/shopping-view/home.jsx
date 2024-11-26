@@ -106,7 +106,7 @@ function ShoppingHome() {
                     ? (prevSlide) => (prevSlide + 1) % slides.length
                     : (prevSlide) => (prevSlide + 1) % featureImageList.length
             );
-        }, 1000);
+        }, 10000);
 
         return () => clearInterval(timer);
     }, [featureImageList, slides]);
